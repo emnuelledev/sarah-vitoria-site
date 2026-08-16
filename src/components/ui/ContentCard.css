@@ -1,0 +1,78 @@
+/* Sem min-width:0 aqui, um item de grid com aspect-ratio + min-height (o
+   ImagePlaceholder) contribui sua largura "preferida" pelo aspect-ratio
+   como largura mínima do item — em grids de 4 colunas isso é maior que a
+   fatia justa de 1fr e estoura o container inteiro pra fora da tela. */
+.content-card {
+  min-width: 0;
+}
+
+.content-card__link {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: none;
+  padding: 0;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+}
+
+.content-card__image {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-soft);
+}
+
+.content-card__body {
+  padding-top: var(--space-sm);
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.content-card__category {
+  margin-bottom: var(--space-2xs);
+}
+
+.content-card__title {
+  font-size: 1.2rem;
+  line-height: 1.32;
+  margin-bottom: var(--space-2xs);
+  transition: color var(--dur-fast) var(--ease-editorial);
+}
+
+.content-card__link:hover .content-card__title {
+  color: var(--color-lilas-escuro);
+}
+
+.content-card__description {
+  font-size: 0.9rem;
+  color: var(--text-suave);
+  flex: 1;
+}
+
+.content-card__read {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: var(--space-sm);
+  font-family: var(--font-suporte);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-roxo-profundo);
+}
+
+.content-card__read span {
+  transition: transform var(--dur-fast) var(--ease-editorial);
+}
+
+.content-card__link:hover .content-card__read span {
+  transform: translateX(4px);
+}

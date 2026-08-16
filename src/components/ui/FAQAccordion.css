@@ -1,0 +1,88 @@
+.faq-accordion {
+  border-top: 1px solid var(--color-borda);
+}
+
+.faq-accordion__item {
+  border-bottom: 1px solid var(--color-borda);
+}
+
+.faq-accordion__heading {
+  margin: 0;
+}
+
+.faq-accordion__trigger {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-md);
+  background: transparent;
+  border: none;
+  padding: 1.4rem 0.25rem;
+  text-align: left;
+  font-family: var(--font-editorial);
+  font-size: 1.1rem;
+  color: var(--text-principal);
+}
+
+.faq-accordion__icon {
+  flex-shrink: 0;
+  font-family: var(--font-suporte);
+  font-size: 1.3rem;
+  font-weight: 300;
+  color: var(--color-lilas-escuro);
+  transition: transform var(--dur-medium) var(--ease-editorial);
+}
+
+.faq-accordion__icon.is-open {
+  transform: rotate(45deg);
+}
+
+.faq-accordion__panel {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows var(--dur-medium) var(--ease-editorial);
+}
+
+.faq-accordion__panel.is-open {
+  grid-template-rows: 1fr;
+}
+
+.faq-accordion__panel-inner {
+  overflow: hidden;
+  padding-right: 2.5rem;
+  padding-bottom: 1.4rem;
+  min-height: 0;
+}
+
+.faq-accordion__panel p {
+  color: var(--text-principal);
+  font-size: 0.95rem;
+  line-height: 1.65;
+}
+
+/* Só as respostas ainda não fornecidas (placeholder) ficam em itálico
+   esmaecido — respostas reais aparecem com o texto normal do site. */
+.faq-accordion__panel p.is-placeholder {
+  color: var(--text-suave);
+  font-style: italic;
+}
+
+.faq-accordion__download {
+  display: inline-block;
+  margin-top: 0.9rem;
+  font-family: var(--font-suporte);
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--color-lilas-escuro);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.faq-accordion__download:hover {
+  color: var(--text-principal);
+}
+
+.faq-accordion__panel:not(.is-open) .faq-accordion__panel-inner {
+  visibility: hidden;
+}

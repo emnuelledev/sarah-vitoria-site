@@ -1,0 +1,85 @@
+/*
+  Sarah Vitória — Nutricionista
+  Design tokens extraídos do identity board já aprovado.
+  Não alterar valores de marca (cor/tipografia) sem novo board aprovado.
+*/
+
+:root {
+  /* ===== Paleta (identity board) ===== */
+  --color-lilas: #d395ff;           /* Lilás — primária */
+  --color-lilas-escuro: #a16bc7;    /* Lilás Escuro — secundária */
+  --color-marfim: #f2efeb;          /* Creme / Off-White — cor mais usada nos materiais */
+  --color-branco-lilas: #f9f5fc;    /* Branco Lilás — neutro claro */
+  --color-roxo-profundo: #3a2743;   /* Roxo Profundo — texto / contraste escuro */
+
+  /* Tons auxiliares derivados (uso funcional: bordas, hovers, overlays) */
+  --color-lilas-10: rgba(211, 149, 255, 0.1);
+  --color-lilas-18: rgba(211, 149, 255, 0.18);
+  --color-lilas-35: rgba(211, 149, 255, 0.35);
+  --color-roxo-profundo-70: rgba(58, 39, 67, 0.7);
+  --color-roxo-profundo-45: rgba(58, 39, 67, 0.45);
+  --color-borda: #e3d2ee;
+
+  /* Rosa sakura — aceno discreto à cultura japonesa (pedido pela Sarah),
+     usado só em pequenos acentos na página Sobre. Não faz parte da paleta
+     principal do identity board; --color-sakura é só decorativo (traço/tint),
+     --color-sakura-escuro é a versão escurecida para uso em texto/borda
+     onde contraste importa (segue o mesmo critério AA de --text-suave). */
+  --color-sakura: #f0c3d9;
+  --color-sakura-escuro: #a83e73;
+  --color-sakura-10: rgba(240, 195, 217, 0.14);
+
+  /* ===== Papéis semânticos ===== */
+  --bg-page: var(--color-marfim);
+  --bg-surface: var(--color-branco-lilas);
+  --bg-inverse: var(--color-roxo-profundo);
+  --text-principal: var(--color-roxo-profundo);
+  /* --text-suave: tom funcional para texto secundário/corpo — derivado do
+     Lilás Escuro do identity board, mas escurecido para cumprir contraste
+     mínimo AA (4.5:1) em texto de tamanho normal sobre marfim/branco-lilás.
+     O Lilás Escuro (#A16BC7) em si permanece intacto como cor de marca
+     (swatch, bordas, tipografia decorativa grande). */
+  --text-suave: #8a4fb0;
+  --text-sobre-inverse: var(--color-branco-lilas);
+  --accent: var(--color-lilas);
+  --accent-escuro: var(--color-lilas-escuro);
+
+  /* ===== Tipografia (identity board: Nome · Lora / Descritor · Poppins Light) ===== */
+  --font-editorial: 'Lora', 'Iowan Old Style', 'Georgia', serif;
+  --font-suporte: 'Poppins', 'Helvetica Neue', Arial, sans-serif;
+
+  --tracking-label: 0.32em;
+  --tracking-title: 0.06em;
+
+  /* ===== Espaçamento (escala editorial, bastante respiro) ===== */
+  --space-3xs: 0.25rem;
+  --space-2xs: 0.5rem;
+  --space-xs: 0.875rem;
+  --space-sm: 1.25rem;
+  --space-md: 2rem;
+  --space-lg: 3.25rem;
+  --space-xl: 5rem;
+  --space-2xl: 7.5rem;
+  --space-3xl: 10rem;
+
+  /* ===== Container ===== */
+  --container-max: 1180px;
+  --container-narrow: 760px;
+  --gutter: clamp(1.25rem, 5vw, 4rem);
+
+  /* ===== Raios e sombras (discretos, sem glassmorphism) ===== */
+  --radius-sm: 4px;
+  --radius-md: 10px;
+  --radius-lg: 22px;
+  --shadow-soft: 0 18px 45px -28px rgba(58, 39, 67, 0.35);
+
+  /* ===== Transições ===== */
+  --ease-editorial: cubic-bezier(0.22, 1, 0.36, 1);
+  --dur-fast: 220ms;
+  --dur-medium: 480ms;
+  --dur-slow: 820ms;
+}
+
+@media (prefers-color-scheme: dark) {
+  /* O site mantém identidade clara/editorial por padrão — sem modo escuro nesta versão. */
+}

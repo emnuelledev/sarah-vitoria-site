@@ -1,0 +1,92 @@
+.scheduling-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  max-width: 480px;
+  margin-inline: auto;
+  text-align: left;
+}
+
+.scheduling-form__row {
+  display: flex;
+  gap: var(--space-md);
+}
+
+.scheduling-form__field {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  min-width: 0;
+}
+
+.scheduling-form__field span {
+  font-family: var(--font-suporte);
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(249, 245, 252, 0.65);
+}
+
+.scheduling-form__field input,
+.scheduling-form__field select,
+.scheduling-form__field textarea {
+  font-family: var(--font-suporte);
+  font-size: 0.95rem;
+  color: var(--color-branco-lilas);
+  background: rgba(249, 245, 252, 0.08);
+  border: 1px solid rgba(249, 245, 252, 0.28);
+  border-radius: var(--radius-sm);
+  padding: 0.75rem 0.9rem;
+  resize: vertical;
+  transition: border-color var(--dur-fast) var(--ease-editorial);
+}
+
+.scheduling-form__field select option {
+  color: var(--text-principal);
+}
+
+.scheduling-form__field input::placeholder,
+.scheduling-form__field textarea::placeholder {
+  color: rgba(249, 245, 252, 0.4);
+}
+
+.scheduling-form__field input:focus,
+.scheduling-form__field select:focus,
+.scheduling-form__field textarea:focus {
+  outline: none;
+  border-color: var(--color-lilas);
+}
+
+.scheduling-form__ctas {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-md);
+  margin-top: var(--space-2xs);
+}
+
+.scheduling-form__ctas button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.btn-ghost--on-dark {
+  color: var(--color-branco-lilas);
+}
+
+.scheduling-form__nota {
+  font-size: 0.78rem;
+  font-style: italic;
+  color: rgba(249, 245, 252, 0.6);
+  text-align: center;
+  margin-top: -0.4rem;
+}
+
+@media (max-width: 560px) {
+  .scheduling-form__row {
+    flex-direction: column;
+  }
+}

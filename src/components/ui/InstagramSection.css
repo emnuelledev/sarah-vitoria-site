@@ -1,0 +1,31 @@
+.instagram-section__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-sm);
+}
+
+/* `.placeholder-frame` global tem min-height:220px — em telas estreitas com
+   3 colunas isso estoura a proporção quadrada do tile; zeramos aqui para o
+   aspect-ratio 1/1 do ImagePlaceholder mandar sozinho. */
+.instagram-section__tile .placeholder-frame {
+  min-height: 0;
+}
+
+/* E sem min-width:0 no próprio item de grid, o aspect-ratio ainda poderia
+   forçar uma largura mínima maior que a fatia de 1fr e estourar o
+   container pra fora da tela (mesma causa do bug no ContentCard). */
+.instagram-section__tile {
+  min-width: 0;
+}
+
+.instagram-section__cta {
+  display: flex;
+  justify-content: center;
+  margin-top: var(--space-lg);
+}
+
+@media (max-width: 720px) {
+  .instagram-section__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

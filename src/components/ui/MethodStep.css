@@ -1,0 +1,37 @@
+.method-step {
+  display: flex;
+  gap: var(--space-md);
+  padding-block: var(--space-md);
+  border-top: 1px solid var(--color-borda);
+}
+
+.method-step__numero {
+  font-family: var(--font-editorial);
+  font-style: italic;
+  font-size: clamp(2.5rem, 5vw, 3.75rem);
+  line-height: 1;
+  color: var(--color-lilas);
+  flex-shrink: 0;
+  width: 3.5ch;
+}
+
+.method-step__titulo {
+  font-size: 1.15rem;
+  margin-bottom: var(--space-2xs);
+}
+
+.method-step__descricao {
+  color: var(--text-suave);
+  font-size: 0.92rem;
+  max-width: 48ch;
+}
+
+@media (max-width: 560px) {
+  .method-step {
+    gap: var(--space-sm);
+  }
+
+  .method-step__numero {
+    font-size: 2.2rem;
+  }
+}

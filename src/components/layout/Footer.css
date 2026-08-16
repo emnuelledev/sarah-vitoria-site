@@ -1,0 +1,128 @@
+.footer {
+  background: var(--color-roxo-profundo);
+  color: var(--color-branco-lilas);
+  padding-block: var(--space-xl) var(--space-md);
+}
+
+.footer__grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr 1fr;
+  gap: var(--space-lg);
+  padding-bottom: var(--space-lg);
+  border-bottom: 1px solid rgba(249, 245, 252, 0.14);
+}
+
+.footer__logo {
+  height: 30px;
+  width: auto;
+  margin-bottom: var(--space-xs);
+}
+
+.footer__role {
+  font-size: 0.8rem;
+  color: rgba(249, 245, 252, 0.65);
+  letter-spacing: 0.03em;
+}
+
+.footer__label {
+  color: rgba(249, 245, 252, 0.55);
+  margin-bottom: var(--space-sm);
+}
+
+.footer__col ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.footer__col a,
+.footer__placeholder,
+.footer__address {
+  font-size: 0.88rem;
+  color: rgba(249, 245, 252, 0.88);
+}
+
+.footer__col a {
+  transition: color var(--dur-fast) var(--ease-editorial);
+}
+
+.footer__col a:hover {
+  color: var(--color-lilas);
+}
+
+.footer__placeholder,
+.footer__address {
+  /* 0.58 em vez de 0.5 — garante contraste mínimo AA (4.5:1) sobre o roxo profundo */
+  color: rgba(249, 245, 252, 0.58);
+  font-style: italic;
+}
+
+.footer__address.is-confirmed {
+  color: rgba(249, 245, 252, 0.88);
+  font-style: normal;
+}
+
+.footer__bottom {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  padding-top: var(--space-md);
+  font-size: 0.72rem;
+  letter-spacing: 0.03em;
+  color: rgba(249, 245, 252, 0.58);
+}
+
+.footer__credit {
+  color: rgba(249, 245, 252, 0.58);
+}
+
+.footer__signature {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: rgba(249, 245, 252, 0.58);
+  background: none;
+  border: none;
+  padding: 0;
+  font-family: inherit;
+  font-size: 0.72rem;
+  letter-spacing: 0.03em;
+  cursor: pointer;
+  transition: opacity var(--dur-fast) var(--ease-editorial);
+}
+
+.footer__signature:hover,
+.footer__signature:focus-visible {
+  opacity: 0.75;
+}
+
+.footer__signature:focus-visible {
+  outline: 1px solid rgba(249, 245, 252, 0.5);
+  outline-offset: 3px;
+}
+
+.footer__signature-mark {
+  height: 30px;
+  width: auto;
+  opacity: 0.92;
+}
+
+@media (max-width: 860px) {
+  .footer__grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 560px) {
+  .footer__grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+  }
+
+  .footer__bottom {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

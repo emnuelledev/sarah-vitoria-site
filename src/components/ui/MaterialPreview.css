@@ -1,0 +1,40 @@
+/* Mesma correção do ContentCard: sem isso, o ImagePlaceholder (aspect-ratio
+   + min-height) força uma largura mínima maior que a fatia de 1fr em grids
+   com várias colunas, estourando o container para fora da tela. */
+.material-preview {
+  min-width: 0;
+}
+
+.material-preview__image {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-soft);
+}
+
+.material-preview__titulo {
+  font-size: 1rem;
+  margin-top: var(--space-sm);
+  margin-bottom: var(--space-3xs);
+}
+
+.material-preview__descricao {
+  font-size: 0.86rem;
+  color: var(--text-suave);
+}
+
+.material-preview__download {
+  display: inline-block;
+  margin-top: var(--space-2xs);
+  font-family: var(--font-suporte);
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--color-lilas-escuro);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.material-preview__download:hover {
+  color: var(--text-principal);
+}

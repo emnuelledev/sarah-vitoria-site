@@ -1,0 +1,140 @@
+/* ===== Modalidades ===== */
+.modalidades__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-lg);
+}
+
+.modalidades__item {
+  padding: var(--space-lg);
+  border: 1px solid var(--color-borda);
+  border-radius: var(--radius-lg);
+  background: var(--color-branco-lilas);
+  box-shadow: var(--shadow-soft);
+}
+
+.modalidades__numero {
+  font-family: var(--font-editorial);
+  font-style: italic;
+  font-size: 2.5rem;
+  color: var(--color-lilas-escuro);
+  display: block;
+  margin-bottom: var(--space-sm);
+}
+
+.modalidades__item h3 {
+  font-size: 1.25rem;
+  margin-bottom: var(--space-2xs);
+}
+
+.modalidades__item p {
+  color: var(--text-suave);
+  font-size: 0.95rem;
+}
+
+/* ===== Agendamento CTA principal ===== */
+.agendamento-cta {
+  position: relative;
+  overflow: hidden;
+  background: var(--color-roxo-profundo);
+  color: var(--color-branco-lilas);
+  padding-block: var(--space-2xl);
+  text-align: center;
+}
+
+.agendamento-cta__inner {
+  position: relative;
+  z-index: 1;
+  max-width: 560px;
+}
+
+.agendamento-cta__eyebrow {
+  color: rgba(249, 245, 252, 0.55);
+}
+
+.agendamento-cta__titulo {
+  color: var(--color-branco-lilas);
+  font-size: clamp(1.7rem, 3.4vw, 2.4rem);
+  margin-top: var(--space-2xs);
+  margin-bottom: var(--space-lg);
+}
+
+.agendamento-cta__texto {
+  color: rgba(249, 245, 252, 0.75);
+  font-size: 0.92rem;
+  line-height: 1.6;
+  margin-bottom: var(--space-lg);
+}
+
+/* ===== Contato =====
+   Seção compacta: só os contatos diretos (WhatsApp/e-mail/Instagram), sem
+   formulário (já existe um completo na seção de agendamento logo acima).
+   Cada contato é um chip arredondado com sombra suave — mesmo tratamento
+   "pilula" dos botões do site, só que menor e mais discreto. */
+.contato .section-title {
+  margin-bottom: var(--space-md);
+}
+
+.contato__chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+}
+
+.contato__chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.85rem 1.4rem;
+  border-radius: 999px;
+  border: 1px solid var(--color-borda);
+  background: var(--color-branco-lilas);
+  box-shadow: var(--shadow-soft);
+  font-family: var(--font-editorial);
+  font-size: 1rem;
+  color: var(--text-principal);
+  transition: transform var(--dur-fast) var(--ease-editorial),
+    color var(--dur-fast) var(--ease-editorial),
+    border-color var(--dur-fast) var(--ease-editorial);
+}
+
+a.contato__chip:hover,
+a.contato__chip:focus-visible {
+  transform: translateY(-2px);
+  color: var(--color-lilas-escuro);
+  border-color: var(--color-lilas-escuro);
+  outline: none;
+}
+
+.contato__chip-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-lilas-escuro);
+}
+
+.contato__chip--placeholder {
+  font-style: italic;
+  color: var(--text-suave);
+  box-shadow: none;
+}
+
+.contato__chip--placeholder .contato__chip-icon {
+  color: var(--text-suave);
+}
+
+@media (max-width: 720px) {
+  .modalidades__grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-sm);
+  }
+
+  .contato__chips {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .contato__chip {
+    width: 100%;
+  }
+}

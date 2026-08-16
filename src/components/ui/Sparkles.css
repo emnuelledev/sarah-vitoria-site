@@ -1,0 +1,46 @@
+.sparkles {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.sparkles__item {
+  position: absolute;
+  display: block;
+  color: currentColor;
+  transform: rotate(var(--r, 0deg));
+}
+
+.sparkles__item svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* Sobre bg/tom por contexto: cada seção define `color` no elemento pai
+   (ver .metamorfose-preview, .metodo-metamorfose, .sobre-alem). */
+.sparkles--butterfly {
+  color: var(--color-lilas);
+}
+
+.sparkles--petal {
+  color: var(--color-sakura);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .sparkles__item {
+    animation: sparkles-drift 7s ease-in-out infinite;
+  }
+}
+
+@keyframes sparkles-drift {
+  0%,
+  100% {
+    transform: translateY(0) rotate(var(--r, 0deg));
+  }
+  50% {
+    transform: translateY(-6px) rotate(var(--r, 0deg));
+  }
+}

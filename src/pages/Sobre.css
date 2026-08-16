@@ -1,0 +1,166 @@
+/* ===== Profissional ===== */
+.sobre-profissional__layout {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: var(--space-2xl);
+  align-items: start;
+}
+
+.sobre-profissional__foto img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-soft);
+}
+
+.sobre-profissional__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-lg) var(--space-2xl);
+  margin-top: var(--space-lg);
+}
+
+@media (max-width: 940px) {
+  .sobre-profissional__layout {
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+  }
+
+  .sobre-profissional__foto {
+    position: static;
+    max-width: 340px;
+  }
+}
+
+@media (max-width: 560px) {
+  .sobre-profissional__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.sobre-profissional__item {
+  border-top: 1px solid var(--color-borda);
+  padding-top: var(--space-sm);
+}
+
+.sobre-profissional__label {
+  margin-bottom: var(--space-2xs);
+}
+
+.sobre-profissional__valor {
+  color: var(--text-principal);
+  line-height: 1.7;
+}
+
+.sobre-profissional__valor.is-placeholder {
+  color: var(--text-suave);
+  font-style: italic;
+}
+
+.sobre-profissional__lista {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.sobre-profissional__lista li {
+  color: var(--text-principal);
+  line-height: 1.7;
+  padding-left: 1.1rem;
+  position: relative;
+}
+
+.sobre-profissional__lista li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.6em;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--color-lilas-escuro);
+  opacity: 0.7;
+}
+
+/* ===== Filosofia ===== */
+.sobre-filosofia {
+  background: var(--color-branco-lilas);
+  padding-block: var(--space-2xl);
+  border-top: 1px solid var(--color-borda);
+  border-bottom: 1px solid var(--color-borda);
+}
+
+.sobre-filosofia__inner {
+  max-width: 780px;
+  text-align: center;
+}
+
+.sobre-filosofia__frase {
+  font-family: var(--font-editorial);
+  font-style: italic;
+  font-weight: 500;
+  font-size: clamp(2rem, 5vw, 3.4rem);
+  line-height: 1.25;
+  color: var(--color-roxo-profundo);
+}
+
+.sobre-filosofia__texto {
+  margin-top: var(--space-lg);
+  font-size: 1.05rem;
+  color: var(--text-suave);
+  max-width: 52ch;
+  margin-inline: auto;
+  line-height: 1.8;
+}
+
+/* ===== Sarah além da nutrição ===== */
+.sobre-alem {
+  position: relative;
+  overflow: hidden;
+}
+
+.sobre-alem .container {
+  position: relative;
+  z-index: 1;
+}
+
+.sobre-alem__quantidade {
+  font-family: var(--font-editorial);
+  font-style: italic;
+  font-size: 1.05rem;
+  color: var(--color-lilas-escuro);
+  margin-bottom: var(--space-lg);
+}
+
+/* A composição dos itens (ícone + texto) mora em HobbyList.css — o
+   componente HobbyList é usado aqui dentro da seção .sobre-alem. */
+
+/* ===== Playlist ===== */
+.sobre-playlist {
+  background: var(--color-branco-lilas);
+}
+
+/* ===== Fechamento ===== */
+.sobre-fechamento {
+  padding-block: var(--space-xl);
+  text-align: center;
+}
+
+.sobre-fechamento__texto {
+  font-family: var(--font-editorial);
+  font-style: italic;
+  font-size: clamp(1.3rem, 2.4vw, 1.7rem);
+  max-width: 46ch;
+  margin-inline: auto;
+  line-height: 1.6;
+  color: var(--text-principal);
+}
+
+@media (max-width: 720px) {
+  .sobre-profissional__grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+  }
+}

@@ -1,0 +1,196 @@
+/* Fontes reais da identidade da Aura Digital — só usadas aqui dentro do
+   popup, propositalmente diferentes da tipografia do site da Sarah (Lora +
+   Poppins), porque este momento é sobre a marca da própria Aura. */
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
+
+.aura-modal__backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(3px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.25rem;
+  z-index: 1000;
+  animation: aura-modal-fade 220ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.aura-modal {
+  position: relative;
+  width: 100%;
+  max-width: 460px;
+  overflow: hidden;
+  background: #0c0a12;
+  color: #f3f1f8;
+  border-radius: 28px;
+  box-shadow: 0 40px 90px -30px rgba(0, 0, 0, 0.6);
+  padding: 3rem 2.4rem 2.6rem;
+  text-align: center;
+  font-family: 'Instrument Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  animation: aura-modal-rise 480ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.aura-modal__glow {
+  position: absolute;
+  top: -10%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120%;
+  aspect-ratio: 1;
+  background: radial-gradient(
+    circle at center,
+    rgba(160, 138, 255, 0.4) 0%,
+    rgba(160, 138, 255, 0.14) 32%,
+    transparent 62%
+  );
+  filter: blur(6px);
+  pointer-events: none;
+}
+
+.aura-modal__fechar {
+  position: absolute;
+  top: 1.1rem;
+  right: 1.1rem;
+  z-index: 1;
+  width: 34px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(243, 241, 248, 0.25);
+  border-radius: 50%;
+  background: rgba(243, 241, 248, 0.04);
+  color: #f3f1f8;
+  font-size: 1.3rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: background 220ms ease, border-color 220ms ease;
+}
+
+.aura-modal__fechar:hover,
+.aura-modal__fechar:focus-visible {
+  background: rgba(243, 241, 248, 0.12);
+  border-color: rgba(243, 241, 248, 0.5);
+  outline: none;
+}
+
+.aura-modal__mark {
+  position: relative;
+  z-index: 1;
+  width: 190px;
+  height: auto;
+  margin-inline: auto;
+  margin-bottom: 1.6rem;
+}
+
+.aura-modal__eyebrow {
+  position: relative;
+  z-index: 1;
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #a9a3bc;
+  margin-bottom: 1.4rem;
+}
+
+.aura-modal__tagline {
+  position: relative;
+  z-index: 1;
+  font-family: 'Bodoni Moda', Georgia, serif;
+  font-style: italic;
+  font-weight: 500;
+  font-size: clamp(1.5rem, 4vw, 1.9rem);
+  line-height: 1.25;
+  color: #f3f1f8;
+  margin-bottom: 1.2rem;
+}
+
+.aura-modal__texto {
+  position: relative;
+  z-index: 1;
+  color: #a9a3bc;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  max-width: 34ch;
+  margin-inline: auto;
+}
+
+.aura-modal__links {
+  position: relative;
+  z-index: 1;
+  margin-top: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.9rem;
+}
+
+.aura-modal__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7em;
+  padding: 0.85em 1.6em;
+  border: 1px solid rgba(243, 241, 248, 0.28);
+  border-radius: 100px;
+  color: #f3f1f8;
+  font-size: 0.92rem;
+  transition: background 220ms ease, border-color 220ms ease;
+}
+
+.aura-modal__cta:hover {
+  background: rgba(243, 241, 248, 0.08);
+  border-color: rgba(243, 241, 248, 0.5);
+}
+
+.aura-modal__link {
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #a9a3bc;
+  text-underline-offset: 3px;
+}
+
+.aura-modal__link:hover {
+  color: #f3f1f8;
+}
+
+@keyframes aura-modal-fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes aura-modal-rise {
+  from {
+    opacity: 0;
+    transform: translateY(16px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .aura-modal__backdrop,
+  .aura-modal {
+    animation: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .aura-modal {
+    padding: 2.6rem 1.6rem 2.2rem;
+  }
+
+  .aura-modal__mark {
+    width: 150px;
+  }
+}

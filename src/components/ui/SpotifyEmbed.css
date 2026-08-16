@@ -1,0 +1,56 @@
+.spotify-embed--placeholder {
+  border-radius: var(--radius-md);
+  border: 1px dashed var(--color-lilas-escuro);
+  background: var(--color-branco-lilas);
+  display: flex;
+  align-items: center;
+  text-align: left;
+  gap: var(--space-md);
+  padding: var(--space-md);
+}
+
+.spotify-embed__thumb {
+  width: 104px;
+  flex-shrink: 0;
+}
+
+.spotify-embed__thumb .placeholder-frame {
+  min-height: 0;
+}
+
+.spotify-embed__info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.spotify-embed__note {
+  font-family: var(--font-suporte);
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-lilas-escuro);
+}
+
+.spotify-embed--placeholder p {
+  max-width: 34ch;
+  color: var(--text-suave);
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+@media (max-width: 560px) {
+  .spotify-embed--placeholder {
+    flex-direction: column;
+    text-align: center;
+    padding: var(--space-lg);
+  }
+
+  .spotify-embed__thumb {
+    width: 120px;
+  }
+
+  .spotify-embed__info {
+    align-items: center;
+  }
+}
