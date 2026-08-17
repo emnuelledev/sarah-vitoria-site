@@ -1,0 +1,318 @@
+/* ============================================================================
+   admin.css — estilos compartilhados do painel /admin. Reaproveita os tokens
+   de marca (variables.css) mas com layout utilitário (tabelas, formulários),
+   sem a estética editorial do site público — é uma ferramenta de trabalho.
+   ============================================================================ */
+
+.admin-shell {
+  min-height: 100vh;
+  background: var(--bg-page);
+  color: var(--text-principal);
+  font-family: var(--font-suporte);
+}
+
+.admin-topbar {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  padding: 1rem var(--gutter);
+  background: var(--color-roxo-profundo);
+  color: var(--color-branco-lilas);
+  flex-wrap: wrap;
+}
+
+.admin-topbar__brand {
+  font-family: var(--font-editorial);
+  font-size: 1rem;
+  white-space: nowrap;
+}
+
+.admin-topbar__nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  flex: 1;
+}
+
+.admin-topbar__link {
+  font-size: 0.82rem;
+  letter-spacing: 0.04em;
+  color: rgba(249, 245, 252, 0.7);
+  padding-block: 0.25rem;
+  border-bottom: 1px solid transparent;
+}
+
+.admin-topbar__link:hover {
+  color: var(--color-branco-lilas);
+}
+
+.admin-topbar__link.is-active {
+  color: var(--color-branco-lilas);
+  border-color: var(--color-lilas);
+}
+
+.admin-topbar__sair {
+  background: transparent;
+  color: var(--color-branco-lilas);
+  border: 1px solid rgba(249, 245, 252, 0.35);
+  border-radius: var(--radius-sm);
+  padding: 0.5rem 1rem;
+  font-size: 0.78rem;
+}
+
+.admin-topbar__sair:hover {
+  border-color: var(--color-lilas);
+}
+
+.admin-content {
+  max-width: 1080px;
+  margin-inline: auto;
+  padding: var(--space-lg) var(--gutter);
+}
+
+.admin-content h1 {
+  font-size: 1.5rem;
+  margin-bottom: var(--space-xs);
+}
+
+.admin-content h2 {
+  font-size: 1.15rem;
+  margin-bottom: var(--space-2xs);
+}
+
+.admin-subtitulo {
+  color: var(--text-suave);
+  margin-bottom: var(--space-md);
+}
+
+/* ===== Cards / seções ===== */
+.admin-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--color-borda);
+  border-radius: var(--radius-md);
+  padding: var(--space-md);
+  margin-bottom: var(--space-md);
+}
+
+.admin-card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: var(--space-sm);
+}
+
+.admin-stat {
+  background: var(--bg-surface);
+  border: 1px solid var(--color-borda);
+  border-radius: var(--radius-md);
+  padding: var(--space-sm);
+}
+
+.admin-stat strong {
+  display: block;
+  font-family: var(--font-editorial);
+  font-size: 1.8rem;
+  color: var(--color-roxo-profundo);
+}
+
+.admin-stat span {
+  font-size: 0.78rem;
+  color: var(--text-suave);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+/* ===== Formulários ===== */
+.admin-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.admin-form__row {
+  display: flex;
+  gap: var(--space-sm);
+  flex-wrap: wrap;
+}
+
+.admin-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  flex: 1;
+  min-width: 160px;
+}
+
+.admin-field span {
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-suave);
+}
+
+.admin-field input,
+.admin-field select,
+.admin-field textarea {
+  font-family: var(--font-suporte);
+  font-size: 0.9rem;
+  color: var(--text-principal);
+  background: var(--color-branco-lilas);
+  border: 1px solid var(--color-borda);
+  border-radius: var(--radius-sm);
+  padding: 0.6rem 0.75rem;
+  resize: vertical;
+}
+
+.admin-field input:focus,
+.admin-field select:focus,
+.admin-field textarea:focus {
+  outline: none;
+  border-color: var(--color-lilas);
+}
+
+.admin-field--checkbox {
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.admin-erro {
+  color: #b3261e;
+  font-size: 0.85rem;
+}
+
+.admin-ok {
+  color: #2e7d32;
+  font-size: 0.85rem;
+}
+
+/* ===== Tabelas ===== */
+.admin-table-wrap {
+  overflow-x: auto;
+}
+
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.88rem;
+}
+
+.admin-table th,
+.admin-table td {
+  text-align: left;
+  padding: 0.65rem 0.75rem;
+  border-bottom: 1px solid var(--color-borda);
+  vertical-align: top;
+}
+
+.admin-table th {
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-suave);
+}
+
+.admin-table td.admin-table__acoes {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.admin-empty {
+  color: var(--text-suave);
+  font-style: italic;
+  padding: var(--space-sm) 0;
+}
+
+/* ===== Botões pequenos ===== */
+.admin-btn {
+  font-family: var(--font-suporte);
+  font-size: 0.78rem;
+  padding: 0.45rem 0.9rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-borda);
+  background: var(--bg-surface);
+  color: var(--text-principal);
+  white-space: nowrap;
+}
+
+.admin-btn:hover {
+  border-color: var(--color-lilas);
+}
+
+.admin-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.admin-btn--primary {
+  background: var(--color-roxo-profundo);
+  color: var(--color-branco-lilas);
+  border-color: var(--color-roxo-profundo);
+}
+
+.admin-btn--primary:hover {
+  background: var(--color-lilas-escuro);
+}
+
+.admin-btn--perigo {
+  border-color: #b3261e;
+  color: #b3261e;
+}
+
+.admin-btn--perigo:hover {
+  background: #b3261e;
+  color: var(--color-branco-lilas);
+}
+
+/* ===== Badge de status ===== */
+.admin-badge {
+  display: inline-block;
+  font-size: 0.72rem;
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.admin-badge--pending {
+  background: #fff3cd;
+  color: #7a5c00;
+}
+
+.admin-badge--confirmed {
+  background: #d4edda;
+  color: #256029;
+}
+
+.admin-badge--cancelled {
+  background: #f1d9d9;
+  color: #7a2020;
+}
+
+/* ===== Login ===== */
+.admin-login {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-inverse);
+  padding: var(--gutter);
+}
+
+.admin-login__form {
+  width: 100%;
+  max-width: 360px;
+  background: var(--bg-surface);
+  border-radius: var(--radius-md);
+  padding: var(--space-lg) var(--space-md);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  box-shadow: var(--shadow-soft);
+}
+
+.admin-login__form h1 {
+  font-size: 1.3rem;
+  margin-bottom: var(--space-2xs);
+  text-align: center;
+}

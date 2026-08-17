@@ -63,6 +63,9 @@ function Footer() {
                 <Link to={item.href}>{item.label}</Link>
               </li>
             ))}
+            <li>
+              <Link to="/admin/login">Login</Link>
+            </li>
           </ul>
         </div>
       </div>

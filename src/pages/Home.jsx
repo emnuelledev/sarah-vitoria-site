@@ -7,13 +7,15 @@ import ContentCard from '../components/ui/ContentCard'
 import ImagePlaceholder from '../components/ui/ImagePlaceholder'
 import Sparkles from '../components/ui/Sparkles'
 import Reveal from '../components/ui/Reveal'
-import { contents } from '../data/contents'
 import { metodo, comoFunciona } from '../data/method'
+import { fetchContents } from '../lib/content'
+import useAsync from '../lib/useAsync'
 import fotoSarah from '../assets/sarah/sarah-consultorio-frente.jpg'
 import './Home.css'
 
 function Home() {
-  const destaques = contents.slice(0, 4)
+  const { data: contents } = useAsync(fetchContents, [])
+  const destaques = (contents ?? []).slice(0, 4)
 
   return (
     <>

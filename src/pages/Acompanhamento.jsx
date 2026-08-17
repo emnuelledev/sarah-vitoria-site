@@ -17,8 +17,8 @@ import {
   planosNota,
   materiais,
 } from '../data/method'
-import { faq } from '../data/faq'
-import { testimonials } from '../data/testimonials'
+import { fetchFaq, fetchTestimonials } from '../lib/content'
+import useAsync from '../lib/useAsync'
 import './Acompanhamento.css'
 
 const METODO_DETALHES = [
@@ -27,6 +27,9 @@ const METODO_DETALHES = [
 ]
 
 function Acompanhamento() {
+  const { data: testimonials } = useAsync(fetchTestimonials, [])
+  const { data: faq } = useAsync(fetchFaq, [])
+
   return (
     <>
       <PageMeta
@@ -137,7 +140,7 @@ function Acompanhamento() {
             description="Avaliações reais, direto do perfil da Sarah no Google."
           />
           <div className="depoimentos__grid">
-            {testimonials.map((depoimento, index) => (
+            {(testimonials ?? []).map((depoimento, index) => (
               <TestimonialCard key={depoimento.id} testimonial={depoimento} delay={index * 80} />
             ))}
           </div>
@@ -217,7 +220,7 @@ function Acompanhamento() {
       <section className="section section--tight acompanhamento-faq">
         <div className="container container--narrow">
           <SectionTitle eyebrow="Perguntas frequentes" title="Antes de agendar" />
-          <FAQAccordion items={faq} />
+          <FAQAccordion items={faq ?? []} />
         </div>
       </section>
 

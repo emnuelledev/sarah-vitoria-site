@@ -57,10 +57,8 @@ function Agendamento() {
             ) : (
               <>
                 <p className="agendamento-cta__texto">
-                  Ainda não temos um sistema de agendamento online — preencha os dados abaixo e envie
-                  direto para a Sarah por WhatsApp ou e-mail. A data e o horário ficam sujeitos à
-                  agenda dela: o formulário serve para ela ter uma ideia da sua preferência antes de
-                  confirmar.
+                  Escolha um horário realmente disponível na agenda da Sarah e envie seu pedido — ela
+                  confirma pelo contato que você informar.
                 </p>
                 <SchedulingForm whatsappBaseUrl={contato.whatsapp.baseUrl} email={contato.email} />
               </>

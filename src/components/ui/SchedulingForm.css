@@ -85,6 +85,73 @@
   margin-top: -0.4rem;
 }
 
+.scheduling-form__aviso {
+  font-size: 0.85rem;
+  color: rgba(249, 245, 252, 0.75);
+  margin: 0;
+}
+
+.scheduling-form__erro {
+  font-size: 0.85rem;
+  color: #ffd7d7;
+  text-align: center;
+  margin: 0;
+}
+
+.scheduling-form__dias {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  max-height: 340px;
+  overflow-y: auto;
+  padding-right: 0.25rem;
+}
+
+.scheduling-form__dia-label {
+  font-family: var(--font-suporte);
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  color: var(--color-branco-lilas);
+  margin-bottom: 0.5rem;
+  text-transform: capitalize;
+}
+
+.scheduling-form__horarios {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.scheduling-form__horario {
+  font-family: var(--font-suporte);
+  font-size: 0.82rem;
+  color: var(--color-branco-lilas);
+  background: rgba(249, 245, 252, 0.08);
+  border: 1px solid rgba(249, 245, 252, 0.28);
+  border-radius: var(--radius-sm);
+  padding: 0.5rem 0.85rem;
+  transition: border-color var(--dur-fast) var(--ease-editorial),
+    background var(--dur-fast) var(--ease-editorial);
+}
+
+.scheduling-form__horario:hover {
+  border-color: var(--color-lilas);
+}
+
+.scheduling-form__horario.is-ativo {
+  background: var(--color-lilas);
+  color: var(--color-roxo-profundo);
+  border-color: var(--color-lilas);
+}
+
+.scheduling-form__sucesso {
+  max-width: 480px;
+  margin-inline: auto;
+  text-align: center;
+  color: var(--color-branco-lilas);
+}
+
 @media (max-width: 560px) {
   .scheduling-form__row {
     flex-direction: column;

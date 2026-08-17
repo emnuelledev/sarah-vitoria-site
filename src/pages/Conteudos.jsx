@@ -3,16 +3,20 @@ import PageMeta from '../components/ui/PageMeta'
 import Hero from '../components/ui/Hero'
 import ContentCard from '../components/ui/ContentCard'
 import InstagramSection from '../components/ui/InstagramSection'
-import { categories, contents } from '../data/contents'
+import { categories } from '../data/contents'
+import { fetchContents } from '../lib/content'
+import useAsync from '../lib/useAsync'
 import './Conteudos.css'
 
 function Conteudos() {
   const [categoriaAtiva, setCategoriaAtiva] = useState('Todos')
+  const { data: contents } = useAsync(fetchContents, [])
 
   const listaFiltrada = useMemo(() => {
-    if (categoriaAtiva === 'Todos') return contents
-    return contents.filter((item) => item.categoria === categoriaAtiva)
-  }, [categoriaAtiva])
+    const lista = contents ?? []
+    if (categoriaAtiva === 'Todos') return lista
+    return lista.filter((item) => item.categoria === categoriaAtiva)
+  }, [contents, categoriaAtiva])
 
   return (
     <>

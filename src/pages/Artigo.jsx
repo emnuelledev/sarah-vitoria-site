@@ -3,7 +3,8 @@ import PageMeta from '../components/ui/PageMeta'
 import Hero from '../components/ui/Hero'
 import ImagePlaceholder from '../components/ui/ImagePlaceholder'
 import Reveal from '../components/ui/Reveal'
-import { contents } from '../data/contents'
+import { fetchContentById } from '../lib/content'
+import useAsync from '../lib/useAsync'
 import './Artigo.css'
 
 /**
@@ -14,8 +15,9 @@ import './Artigo.css'
  */
 function Artigo() {
   const { id } = useParams()
-  const item = contents.find((conteudo) => conteudo.id === id)
+  const { data: item, loading } = useAsync(() => fetchContentById(id), [id])
 
+  if (loading) return null
   if (!item) return <Navigate to="/conteudos" replace />
 
   const isPlaceholder = item.corpo.trim().startsWith('[')
