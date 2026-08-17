@@ -66,7 +66,7 @@ npm run lint       # oxlint
 
 ---
 
-## ☁️ 2. Publicar o site online (Vercel)
+## 🌐 2. Publicar o site online (Vercel)
 
 1. Suba o projeto para o **GitHub**.
 2. Entre em [vercel.com](https://vercel.com) e faça login **com GitHub**.
@@ -86,7 +86,7 @@ Cada push para o GitHub gera um novo deploy automático.
 
 ---
 
-## 🗄️ 3. Configurando o backend (Supabase)
+## 🔧 3. Configurando o backend (Supabase)
 
 1. Crie um projeto gratuito em [supabase.com](https://supabase.com).
 2. Copie `.env.example` para `.env` e preencha com a **Project URL** e a chave
@@ -149,7 +149,7 @@ alternativo, para quem preferir combinar direto.
 
 ---
 
-## ✉️ 6. Notificação por e-mail (Resend)
+## 📧 6. Notificação por e-mail (Resend)
 
 Opcional, mas recomendado — avisa a Sarah por e-mail a cada novo pedido:
 
@@ -170,7 +170,7 @@ fica salvo e visível em `/admin/agendamentos` — só o e-mail automático não
 
 ---
 
-## ✏️ 7. Dados que ainda são editados por arquivo
+## 📝 7. Dados que ainda são editados por arquivo
 
 Conteúdos, depoimentos, FAQ e agendamentos vivem no banco e são editados pelo
 `/admin`. O que ainda muda pouco segue em arquivo, sempre marcado como
@@ -186,7 +186,7 @@ inventado:
 
 ---
 
-## 🖼️ 8. Fotografias e materiais
+## 📸 8. Fotografias e materiais
 
 Onde ainda não há foto/mockup definitivo, o site usa `ImagePlaceholder` — um
 placeholder editorial (não uma foto genérica) que indica claramente o que deve
