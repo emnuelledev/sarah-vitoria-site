@@ -51,6 +51,13 @@
   border-color: var(--color-lilas);
 }
 
+.admin-topbar__acoes {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.admin-topbar__voltar,
 .admin-topbar__sair {
   background: transparent;
   color: var(--color-branco-lilas);
@@ -58,8 +65,10 @@
   border-radius: var(--radius-sm);
   padding: 0.5rem 1rem;
   font-size: 0.78rem;
+  white-space: nowrap;
 }
 
+.admin-topbar__voltar:hover,
 .admin-topbar__sair:hover {
   border-color: var(--color-lilas);
 }
@@ -300,6 +309,7 @@
 }
 
 .admin-login__form {
+  position: relative;
   width: 100%;
   max-width: 360px;
   background: var(--bg-surface);
@@ -309,6 +319,27 @@
   flex-direction: column;
   gap: var(--space-sm);
   box-shadow: var(--shadow-soft);
+}
+
+.admin-login__close {
+  position: absolute;
+  top: 0.85rem;
+  right: 0.85rem;
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: 1px solid var(--color-borda);
+  color: var(--text-suave);
+  font-size: 1.3rem;
+  line-height: 1;
+}
+
+.admin-login__close:hover {
+  border-color: var(--color-lilas);
+  color: var(--text-principal);
 }
 
 .admin-login__form h1 {

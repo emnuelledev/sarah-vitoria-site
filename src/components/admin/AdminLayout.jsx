@@ -1,4 +1,4 @@
-import { NavLink, Outlet } from 'react-router-dom'
+import { Link, NavLink, Outlet } from 'react-router-dom'
 import { useAuth } from '../../lib/AuthContext'
 import './admin.css'
 
@@ -30,9 +30,14 @@ function AdminLayout() {
             </NavLink>
           ))}
         </nav>
-        <button type="button" className="admin-topbar__sair" onClick={() => signOut()}>
-          Sair
-        </button>
+        <div className="admin-topbar__acoes">
+          <Link to="/" className="admin-topbar__voltar">
+            Voltar ao site
+          </Link>
+          <button type="button" className="admin-topbar__sair" onClick={() => signOut()}>
+            Sair
+          </button>
+        </div>
       </header>
       <main className="admin-content">
         <Outlet />

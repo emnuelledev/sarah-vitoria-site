@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Navigate, useLocation } from 'react-router-dom'
+import { Link, Navigate, useLocation } from 'react-router-dom'
 import { useAuth } from '../../lib/AuthContext'
 import PageMeta from '../../components/ui/PageMeta'
 import '../../components/admin/admin.css'
@@ -33,6 +33,9 @@ function Login() {
       <PageMeta title="Admin" description="Área restrita do site da Sarah Vitória." />
       <div className="admin-login">
         <form className="admin-login__form" onSubmit={handleSubmit}>
+          <Link to="/" className="admin-login__close" aria-label="Voltar ao site">
+            ×
+          </Link>
           <h1>Painel administrativo</h1>
           <label className="admin-field">
             <span>E-mail</span>
