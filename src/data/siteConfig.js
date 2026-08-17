@@ -65,8 +65,10 @@ export const siteConfig = {
   },
 
   spotify: {
-    // Embed oficial do Spotify — aguardando link da playlist da Sarah.
-    playlistEmbedUrl: null, // ex.: 'https://open.spotify.com/embed/playlist/....'
+    // Embed de teste (playlist de exemplo, NÃO é a da Sarah) — só para ver o
+    // componente funcionando de verdade. Trocar pelo link real da playlist
+    // da Sarah assim que ela mandar.
+    playlistEmbedUrl: 'https://open.spotify.com/embed/playlist/55nxNlbqVWkRpszjjGqc41?utm_source=generator&si=436d66f404cb49f3',
   },
 
   modalidades: [

@@ -64,7 +64,12 @@ function Sobre() {
                 const isLista = Array.isArray(campo.valor)
                 const isPlaceholder = !isLista && campo.valor.trim().startsWith('[')
                 return (
-                  <Reveal as="div" className="sobre-profissional__item" key={campo.label} delay={index * 60}>
+                  <Reveal
+                    as="div"
+                    className={'sobre-profissional__item' + (isLista ? ' sobre-profissional__item--lista' : '')}
+                    key={campo.label}
+                    delay={index * 60}
+                  >
                     <p className="eyebrow sobre-profissional__label">{campo.label}</p>
                     {isLista ? (
                       <ul className="sobre-profissional__lista">

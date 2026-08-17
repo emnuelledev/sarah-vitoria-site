@@ -4,13 +4,13 @@ import Hero from '../components/ui/Hero'
 import SectionTitle from '../components/ui/SectionTitle'
 import CTASection from '../components/ui/CTASection'
 import ContentCard from '../components/ui/ContentCard'
-import ImagePlaceholder from '../components/ui/ImagePlaceholder'
 import Sparkles from '../components/ui/Sparkles'
 import Reveal from '../components/ui/Reveal'
 import { metodo, comoFunciona } from '../data/method'
 import { fetchContents } from '../lib/content'
 import useAsync from '../lib/useAsync'
 import fotoSarah from '../assets/sarah/sarah-consultorio-frente.jpg'
+import fotoSarahShow from '../assets/sarah/sarah-show.jpg'
 import './Home.css'
 
 function Home() {
@@ -88,7 +88,7 @@ function Home() {
       <section className="section home-sobre">
         <div className="container home-sobre__grid">
           <Reveal as="div" className="home-sobre__imagem">
-            <ImagePlaceholder label="Fotografia — Sarah Vitória" ratio="1 / 1" />
+            <img src={fotoSarahShow} alt="Sarah Vitória sorrindo ao ar livre, entre cerejeiras em flor" />
           </Reveal>
           <Reveal as="div" className="home-sobre__texto" delay={100}>
             <p className="eyebrow">Quem está do outro lado</p>

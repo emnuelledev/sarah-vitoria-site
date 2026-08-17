@@ -39,8 +39,7 @@ pedido, e um painel administrativo para a Sarah gerenciar tudo sem mexer em cód
 9. [Cores e tipografia](#-9-cores-e-tipografia)
 10. [Acessibilidade](#-10-acessibilidade)
 11. [Estrutura do projeto](#-11-estrutura-do-projeto)
-12. [Problemas frequentes](#-12-problemas-frequentes)
-13. [Crédito de Aura Digital](#-13-crédito-de-aura-digital)
+12. [Crédito de Aura Digital](#-12-crédito-de-aura-digital)
 
 ---
 
@@ -243,29 +242,7 @@ supabase/       schema.sql, seed.sql, functions/notify-booking/  (ver seção 3)
 
 ---
 
-## 🆘 12. Problemas frequentes
-
-**A página fica em branco depois do deploy na Vercel.**
-Quase sempre é falta das variáveis de ambiente `VITE_SUPABASE_URL` e
-`VITE_SUPABASE_ANON_KEY` no projeto da Vercel (o `.env` local é gitignored, não
-vai junto no deploy). Configure em *Settings → Environment Variables* e faça
-*Redeploy* — ver seção 2.
-
-**Aparece `Could not find the table 'public...'` no console.**
-O `supabase/schema.sql` ainda não foi rodado nesse projeto Supabase — ver seção 3.
-
-**Não consigo entrar em `/admin`.**
-Confirme que o usuário foi criado em *Authentication → Users* no painel
-Supabase, com o e-mail e senha certos — não existe "esqueci minha senha"
-configurado nem cadastro público.
-
-**Nenhum horário aparece no formulário de agendamento.**
-Falta cadastrar (ou ativar) uma regra em `/admin/disponibilidade` para aquele
-dia da semana e modalidade.
-
----
-
-## 💜 13. Crédito de Aura Digital
+## 💜 12. Crédito de Aura Digital
 
 No rodapé do site aparece **"Website crafted by Aura Digital"**. Ao clicar, abre
 um popup com a identidade da Aura — configurado em `src/data/siteConfig.js`,

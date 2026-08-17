@@ -6,14 +6,16 @@
 // (não uma lista de cards idênticos).
 // ============================================================================
 
-// Bloco profissional — formação acadêmica (graduação) ainda não confirmada
-// permanece como placeholder; especializações vêm do certificado real
-// enviado pela Sarah (Formação em Nutrição Comportamental, UNIFATEC/Centro
-// de Nutrição Comportamental) — nunca inventadas.
+// Bloco profissional — formação acadêmica (graduação) preenchida com um
+// valor provisório (Nutrição — FMU) a pedido da Sarah, só para não ficar em
+// branco; ajustar quando o diploma/histórico oficial vier para confirmar o
+// texto exato. Especializações vêm do certificado real enviado pela Sarah
+// (Formação em Nutrição Comportamental, UNIFATEC/Centro de Nutrição
+// Comportamental) — nunca inventadas.
 export const profissional = {
   historia:
     'Sou nutricionista com foco em comportamento alimentar. A minha maior motivação é te ajudar a construir uma relação saudável com os alimentos — um planejamento alimentar que se encaixe na sua rotina e nas suas preferências, sempre de forma leve e equilibrada.',
-  formacaoPlaceholder: '[Formação acadêmica a confirmar]',
+  formacaoPlaceholder: 'Graduação em Nutrição — FMU (Faculdades Metropolitanas Unidas)',
   crn: 'CRN3-88388/P',
   especializacoes: [
     'Formação em Nutrição Comportamental (80h) — Centro de Nutrição Comportamental, em parceria com o UNIFATEC (Centro Universitário de Tecnologia de Curitiba). Voltada a comer intuitivo, mindful eating, comer restritivo e imagem corporal, transtornos alimentares e acolhimento no atendimento nutricional.',

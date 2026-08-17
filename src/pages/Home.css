@@ -132,6 +132,16 @@
   max-width: 380px;
 }
 
+.home-sobre__imagem img {
+  display: block;
+  width: 100%;
+  max-width: 380px;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-soft);
+}
+
 .home-sobre__texto h2 {
   font-size: clamp(1.8rem, 3vw, 2.4rem);
   margin-top: var(--space-2xs);
@@ -179,6 +189,11 @@
   }
 
   .home-sobre__imagem .placeholder-frame {
+    max-width: 280px;
+    margin-inline: auto;
+  }
+
+  .home-sobre__imagem img {
     max-width: 280px;
     margin-inline: auto;
   }
